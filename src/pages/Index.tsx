@@ -1,8 +1,10 @@
 import { DataCard } from "@/components/DataCard";
 import { TimelineItem } from "@/components/TimelineItem";
 import { PlayerCard } from "@/components/PlayerCard";
-import { Trophy, Crown, Users, Flame } from "lucide-react";
+import { SeasonCard } from "@/components/SeasonCard";
+import { Trophy, Crown, Users, Flame, Calendar } from "lucide-react";
 import heroImage from "@/assets/rcb-hero.jpg";
+import { seasonsData } from "@/data/seasonsData";
 
 const Index = () => {
   const owners = [
@@ -64,6 +66,24 @@ const Index = () => {
 
       {/* Content Section */}
       <main className="container mx-auto px-4 py-16 space-y-20">
+        {/* Seasons Overview */}
+        <section>
+          <DataCard title="IPL Seasons (2008-2024)" icon={<Calendar className="w-8 h-8 text-accent" />}>
+            <p className="text-muted-foreground mb-6 text-lg">
+              Click on any season to view detailed team information including captain, coach, key players, and highlights.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {Object.values(seasonsData).map((season) => (
+                <SeasonCard
+                  key={season.year}
+                  year={season.year}
+                  captain={season.captain}
+                  position={season.position || "N/A"}
+                />
+              ))}
+            </div>
+          </DataCard>
+        </section>
         {/* Owners Section */}
         <section>
           <DataCard title="Ownership" icon={<Crown className="w-8 h-8 text-accent" />}>
