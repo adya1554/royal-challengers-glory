@@ -70,7 +70,7 @@ const Index = () => {
         <section>
           <DataCard title="IPL Seasons (2008-2024)" icon={<Calendar className="w-8 h-8 text-accent" />}>
             <p className="text-muted-foreground mb-6 text-lg">
-              Click on any season to view detailed team information including captain, coach, key players, and highlights.
+              Select a season to explore team details such as captain, coach, star players, and season highlights.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {Object.values(seasonsData).map((season) => (
