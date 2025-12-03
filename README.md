@@ -8,7 +8,7 @@
 
 There are several ways of editing your application.
 
-**Use Lovable**
+
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/eb47138d-7438-46fd-a1bc-7936ff1efb45) and start prompting.
 
@@ -42,7 +42,7 @@ npm run dev
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+
 
 - Navigate to the main page of your repository.
 - Click on the "Code" button (green button) near the top right.
@@ -64,7 +64,7 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/eb47138d-7438-46fd-a1bc-7936ff1efb45) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+Connect with your domain
 
 Yes, you can!
 
