@@ -1,0 +1,20 @@
+FROM node:18 AS build
+# Set the working directory in the container
+WORKDIR /app
+# Copy package.json and package-lock.json from GitHub repository
+COPY package*.json ./
+# Install dependencies
+RUN npm install
+#Copy git code to /app directory
+COPY . .
+# Build the React app
+RUN npm run build
+# Use Nginx as the Application server
+
+FROM nginx:alpine
+# Copy the built React app to Nginx's web server directory
+COPY --from=build /app/dist /usr/share/nginx/html
+# Expose port 80 for the Nginx server
+EXPOSE 80
+#Start Nginx when the container runs
+CMD ["nginx", "-g", "daemon off;"]
