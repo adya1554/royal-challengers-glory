@@ -1,160 +1,94 @@
-import { DataCard } from "@/components/DataCard";
-import { TimelineItem } from "@/components/TimelineItem";
-import { PlayerCard } from "@/components/PlayerCard";
-import { SeasonCard } from "@/components/SeasonCard";
-import { Trophy, Crown, Users, Flame, Calendar } from "lucide-react";
 import heroImage from "@/assets/rcb-hero.jpg";
-import { seasonsData } from "@/data/seasonsData";
 
 const Index = () => {
-  const owners = [
-    { year: "2008-Present", name: "United Spirits Ltd", details: "Owned by Diageo (Vijay Mallya until 2016)" },
-  ];
-
-  const captains = [
-    { year: "2008", name: "Rahul Dravid" },
-    { year: "2009-2010", name: "Anil Kumble" },
-    { year: "2011-2012", name: "Daniel Vettori" },
-    { year: "2013-2017", name: "Virat Kohli" },
-    { year: "2018", name: "Virat Kohli" },
-    { year: "2019-2021", name: "Virat Kohli" },
-    { year: "2022-2024", name: "Faf du Plessis" },
-  ];
-
-  const starPlayers = [
-    { name: "Virat Kohli", role: "Batsman", years: "2008-Present" },
-    { name: "AB de Villiers", role: "Batsman/Wicketkeeper", years: "2011-2021" },
-    { name: "Chris Gayle", role: "Batsman", years: "2011-2017" },
-    { name: "Rahul Dravid", role: "Batsman", years: "2008-2010" },
-    { name: "Glenn Maxwell", role: "All-rounder", years: "2021-Present" },
-    { name: "Faf du Plessis", role: "Batsman", years: "2022-Present" },
-  ];
-
-  const legendaryBowlers = [
-    { name: "Anil Kumble", role: "Leg Spinner", years: "2008-2010" },
-    { name: "Zaheer Khan", role: "Fast Bowler", years: "2008-2010" },
-    { name: "Yuzvendra Chahal", role: "Leg Spinner", years: "2014-2021" },
-    { name: "Dale Steyn", role: "Fast Bowler", years: "2008-2010" },
-    { name: "Mitchell Starc", role: "Fast Bowler", years: "2014-2015" },
-    { name: "Mohammed Siraj", role: "Fast Bowler", years: "2018-Present" },
-    { name: "Harshal Patel", role: "Medium Pacer", years: "2021-2023" },
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
+    <div style={{ minHeight: "100vh", backgroundColor: "#1a1a1a", color: "white" }}>
+      {/* Header */}
+      <header style={{ backgroundColor: "#cc0000", padding: "20px", textAlign: "center" }}>
+        <h1 style={{ fontSize: "32px", fontWeight: "bold", margin: 0 }}>
+          🏆 RCB - Royal Challengers Bangalore 🏆
+        </h1>
+      </header>
+
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
-        </div>
+      <div style={{ textAlign: "center", padding: "40px 20px" }}>
+        <img 
+          src={heroImage} 
+          alt="RCB Team" 
+          style={{ width: "100%", maxWidth: "600px", borderRadius: "10px", border: "4px solid #cc0000" }}
+        />
+      </div>
+
+      {/* Main Content */}
+      <main style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
         
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
-            ROYAL CHALLENGERS
-          </h1>
-          <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">
-            BANGALORE
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-            A Legacy of Excellence • 2008 - 2024
+        {/* Big Announcement */}
+        <div style={{ 
+          backgroundColor: "#cc0000", 
+          padding: "30px", 
+          borderRadius: "10px", 
+          textAlign: "center",
+          marginBottom: "30px"
+        }}>
+          <h2 style={{ fontSize: "48px", margin: "0 0 10px 0" }}>🎉 IPL 2025 CHAMPIONS! 🎉</h2>
+          <p style={{ fontSize: "24px", margin: 0 }}>
+            Finally! Ee Sala Cup Namde came true!
           </p>
         </div>
-      </section>
 
-      {/* Content Section */}
-      <main className="container mx-auto px-4 py-16 space-y-20">
-        {/* Seasons Overview */}
-        <section>
-          <DataCard title="IPL Seasons (2008-2024)" icon={<Calendar className="w-8 h-8 text-accent" />}>
-            <p className="text-muted-foreground mb-6 text-lg">
-              Select a season to explore team details such as captain, coach, star players, and season highlights.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {Object.values(seasonsData).map((season) => (
-                <SeasonCard
-                  key={season.year}
-                  year={season.year}
-                  captain={season.captain}
-                  position={season.position || "N/A"}
-                />
-              ))}
-            </div>
-          </DataCard>
-        </section>
-        {/* Owners Section */}
-        <section>
-          <DataCard title="Ownership" icon={<Crown className="w-8 h-8 text-accent" />}>
-            <div className="space-y-3">
-              {owners.map((owner, index) => (
-                <TimelineItem
-                  key={index}
-                  year={owner.year}
-                  name={owner.name}
-                  details={owner.details}
-                />
-              ))}
-            </div>
-          </DataCard>
-        </section>
+        {/* Some Info */}
+        <div style={{ backgroundColor: "#2a2a2a", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
+          <h3 style={{ color: "#cc0000", fontSize: "24px" }}>About RCB</h3>
+          <p style={{ lineHeight: "1.8" }}>
+            Royal Challengers Bangalore is a cricket team in IPL. They started playing in 2008. 
+            The team color is red and black. Virat Kohli is the most famous player of RCB.
+          </p>
+        </div>
 
-        {/* Captains Section */}
-        <section>
-          <DataCard title="Captains Through The Years" icon={<Trophy className="w-8 h-8 text-primary" />}>
-            <div className="space-y-3">
-              {captains.map((captain, index) => (
-                <TimelineItem
-                  key={index}
-                  year={captain.year}
-                  name={captain.name}
-                />
-              ))}
-            </div>
-          </DataCard>
-        </section>
+        {/* Team Info */}
+        <div style={{ backgroundColor: "#2a2a2a", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
+          <h3 style={{ color: "#cc0000", fontSize: "24px" }}>Team Info</h3>
+          <ul style={{ lineHeight: "2" }}>
+            <li>Founded: 2008</li>
+            <li>Home Ground: M. Chinnaswamy Stadium, Bangalore</li>
+            <li>Captain 2025: Virat Kohli</li>
+            <li>Owner: United Spirits</li>
+            <li>IPL Titles: 1 (2025) 🏆</li>
+          </ul>
+        </div>
 
-        {/* Star Players Section */}
-        <section>
-          <DataCard title="Star Players" icon={<Users className="w-8 h-8 text-accent" />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {starPlayers.map((player, index) => (
-                <PlayerCard
-                  key={index}
-                  name={player.name}
-                  role={player.role}
-                  years={player.years}
-                />
-              ))}
-            </div>
-          </DataCard>
-        </section>
+        {/* Famous Players */}
+        <div style={{ backgroundColor: "#2a2a2a", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
+          <h3 style={{ color: "#cc0000", fontSize: "24px" }}>Famous Players</h3>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            <span style={{ backgroundColor: "#cc0000", padding: "8px 16px", borderRadius: "20px" }}>Virat Kohli</span>
+            <span style={{ backgroundColor: "#cc0000", padding: "8px 16px", borderRadius: "20px" }}>AB de Villiers</span>
+            <span style={{ backgroundColor: "#cc0000", padding: "8px 16px", borderRadius: "20px" }}>Chris Gayle</span>
+            <span style={{ backgroundColor: "#cc0000", padding: "8px 16px", borderRadius: "20px" }}>Glenn Maxwell</span>
+            <span style={{ backgroundColor: "#cc0000", padding: "8px 16px", borderRadius: "20px" }}>Faf du Plessis</span>
+          </div>
+        </div>
 
-        {/* Legendary Bowlers Section */}
-        <section className="pb-16">
-          <DataCard title="Legendary Bowlers" icon={<Flame className="w-8 h-8 text-primary" />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {legendaryBowlers.map((bowler, index) => (
-                <PlayerCard
-                  key={index}
-                  name={bowler.name}
-                  role={bowler.role}
-                  years={bowler.years}
-                />
-              ))}
-            </div>
-          </DataCard>
-        </section>
+        {/* 2025 Win */}
+        <div style={{ backgroundColor: "#2a2a2a", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
+          <h3 style={{ color: "#cc0000", fontSize: "24px" }}>2025 IPL Final</h3>
+          <p style={{ lineHeight: "1.8" }}>
+            On June 3, 2025, RCB finally won their first IPL trophy! After 17 years of waiting, 
+            the fans dream came true. The whole Bangalore city celebrated this historic moment.
+            Virat Kohli was the hero of the match. This is the best day for all RCB fans!
+          </p>
+        </div>
+
       </main>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            Ee Sala Cup Namde 🏆 | Play Bold | Royal Challengers Bangalore
-          </p>
-        </div>
+      <footer style={{ 
+        backgroundColor: "#cc0000", 
+        padding: "20px", 
+        textAlign: "center",
+        marginTop: "40px"
+      }}>
+        <p style={{ margin: 0 }}>Made by RCB Fan ❤️ | Play Bold | 2025</p>
       </footer>
     </div>
   );
