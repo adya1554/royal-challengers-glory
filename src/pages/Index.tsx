@@ -6,7 +6,7 @@ const Index = () => {
       {/* Header */}
       <header style={{ backgroundColor: "#cc0000", padding: "20px", textAlign: "center" }}>
         <h1 style={{ fontSize: "32px", fontWeight: "bold", margin: 0 }}>
-          🏆 RCB - Royal Challengers Bangalore 🏆
+          🏆 This Website is hosted on Docker Using bash in 3 min !!
         </h1>
       </header>
 
