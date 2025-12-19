@@ -6,7 +6,7 @@ const Index = () => {
       {/* Header */}
       <header style={{ backgroundColor: "#cc0000", padding: "20px", textAlign: "center" }}>
         <h1 style={{ fontSize: "32px", fontWeight: "bold", margin: 0 }}>
-          🏆 This Website is hosted on K8S Cluster throught bash in 3 min !!
+          🏆 This Website is hosted on K8S Cluster throught bash in 3 min and automatad by jenkins webhook!!
         </h1>
       </header>
 
