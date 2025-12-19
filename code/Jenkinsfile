@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Remove existing Day6 directory and clone the latest repo
-                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'rm -rf /home/ubuntu/royal-challengers-glory && git clone https://github.com/adya1554/royal-challengers-glory.git /home/ubuntu/royal-challengers-glory'"
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'sudo rm -rf /home/ubuntu/royal-challengers-glory && git clone https://github.com/adya1554/royal-challengers-glory.git /home/ubuntu/royal-challengers-glory'"
                 }
             }
         }
