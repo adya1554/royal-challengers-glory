@@ -4,7 +4,7 @@ sudo rm -r gold ## these steps are not recommened instead you can modify script 
 sudo mkdir gold
 cd gold/
 sudo git clone https://github.com/adya1554/royal-challengers-glory.git
-cd royal-challengers-glory/
+cd royal-challengers-glory/code/
 sudo docker build -t rcb-nginx -f rcb-docfile .
 sudo docker tag rcb-nginx adityamagadum1/rcb ##make sure you did docker login
 sudo docker push adityamagadum1/rcb
