@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    environment {
+        BUILD_SERVER_IP = '172.31.4.138'
+    }
+
+    stages {
+        stage('Cleanup and Clone Repository') {
+            steps {
+                script {
+                    // Remove existing Day6 directory and clone the latest repo
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'rm -rf /home/ubuntu/royal-challengers-glory && git clone https://github.com/adya1554/royal-challengers-glory.git /home/ubuntu/Day6'"
+                }
+            }
+        }
+
+        stage('Build Docker images on Build Server') {
+            steps {
+                script {
+                    // Execute Ansible playbook on Build Server
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'ansible-playbook /home/ubuntu/royal-challengers-glory/ansible/docker-build.yml'"
+                }
+            }
+        }
+
+        stage('Deploy Script on Deploy Server') {
+            steps {
+                script {
+                    // Execute deployment playbook on Deploy Server
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'ansible-playbook /home/ubuntu/royal-challengers-glory/ansible/k8s-script.yml'"
+                }
+            }
+        }
+    }
+}
