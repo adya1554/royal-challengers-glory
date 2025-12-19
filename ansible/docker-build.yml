@@ -15,15 +15,15 @@
 
      - name: clone repo in working directory
        ansible.builtin.shell:
-         cmd: sudo git clone https://github.com/adya1554/bash.git
+         cmd: sudo git clone https://github.com/adya1554/royal-challengers-glory.git
          chdir: workdir/
 
      - name: give permission to .sh files
        ansible.builtin.shell:
          cmd: sudo chown ubuntu docker.sh  && sudo chmod 744 docker.sh
-         chdir: workdir/bash/
+         chdir: workdir/royal-challengers-glory/bash/
 
      - name: run those file on remote server
        ansible.builtin.shell:
          cmd: ./docker.sh
-         chdir: workdir/bash/
+         chdir: workdir/royal-challengers-glory/bash/
