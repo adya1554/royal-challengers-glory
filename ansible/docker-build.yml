@@ -23,7 +23,7 @@
          cmd: sudo chown ubuntu docker.sh  && sudo chmod 744 docker.sh
          chdir: workdir/royal-challengers-glory/bash/
 
-     - name: run those file on remote server
+     - name: run those file on local server to build image server
        ansible.builtin.shell:
          cmd: ./docker.sh
          chdir: workdir/royal-challengers-glory/bash/
