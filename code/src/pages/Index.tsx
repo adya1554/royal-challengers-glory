@@ -6,7 +6,7 @@ const Index = () => {
       {/* Header */}
       <header style={{ backgroundColor: "#cc0000", padding: "20px", textAlign: "center" }}>
         <h1 style={{ fontSize: "32px", fontWeight: "bold", margin: 0 }}>
-          🏆 This fanpage is hosted on kuberneties cluster fullly automated page !!
+          🏆 This fanpage is hosted on kuberneties cluster fullly automated page helm also configerd  !! 
         </h1>
       </header>
 
