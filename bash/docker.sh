@@ -5,15 +5,18 @@ sudo mkdir gold
 cd gold/
 sudo git clone https://github.com/adya1554/royal-challengers-glory.git
 cd royal-challengers-glory/code/
-git_commit=$(sudo git rev-perse HEAD)
+git_commit=$(sudo git rev-parse HEAD)
 sudo docker build -t rcb-nginx:$git_commit -f rcb-docfile .
 sudo docker tag rcb-nginx:$git_commit  adityamagadum1/royals:$git_commit ##make sure you did docker login
 sudo docker push adityamagadum1/royals:$git_commit
 
-##recommended script###
-#!/bin/bash
-#cd gold/Gold_Site_Ecommerce
-#sudo git pull why git 
-#sudo docker build -t react-nginx -f goldockerfile .
-#sudo docker tag react-nginx:latest reactdemo/react-nginx:latest ##make sure you did docker login
-#sudo docker push reactdemo/react-nginx:latest
+sudo docker push sagarkakkalasworld/react-microk8s:$git_commit
+
+aws s3 rm s3://git-commit-bucket/new-value.txt
+sudo touch new_value.txt
+sudo chmod 777 new_value.txt
+sudo echo $git_commit > new_value.txt
+aws s3 cp new_value.txt s3://git-commit-bucket/
+sudo rm new_value.txt
+
+
