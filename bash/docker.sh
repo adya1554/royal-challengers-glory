@@ -5,9 +5,10 @@ sudo mkdir gold
 cd gold/
 sudo git clone https://github.com/adya1554/royal-challengers-glory.git
 cd royal-challengers-glory/code/
-sudo docker build -t rcb-nginx -f rcb-docfile .
-sudo docker tag rcb-nginx adityamagadum1/royals ##make sure you did docker login
-sudo docker push adityamagadum1/royals
+git_commit=$(sudo git rev-perse HEAD)
+sudo docker build -t rcb-nginx:$git_commit -f rcb-docfile .
+sudo docker tag rcb-nginx:$git_commit  adityamagadum1/royals:$git_commit ##make sure you did docker login
+sudo docker push adityamagadum1/royals:$git_commit
 
 ##recommended script###
 #!/bin/bash
