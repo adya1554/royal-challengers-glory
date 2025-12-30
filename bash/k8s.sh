@@ -1,5 +1,5 @@
 !/bin/bash
-cd /home/ubuntu/react-helm/
+cd /home/ubuntu/royal-challengers-glory/react-helm/
 aws s3 cp s3://git-commit-bucket/old_value.txt .
 aws s3 cp s3://git-commit-bucket/new_value.txt .
 old_value=$(cat old_value.txt)
