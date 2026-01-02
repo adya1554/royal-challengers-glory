@@ -22,7 +22,7 @@
          cmd: sudo chown ubuntu k8s.sh && sudo chmod 744 k8s.sh
          chdir: workdir/royal-challengers-glory/bash/
 
-     - name: run those file on remote so it delete running pods server
+     - name: run those file on remote server to upgrade helm package
        ansible.builtin.shell:
          cmd: ./k8s.sh
          chdir: workdir/royal-challengers-glory/bash/
