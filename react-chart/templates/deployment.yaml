@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "react-chart.fullname" . }}
+  namespace: {{ .Values.namespace }}
+🧠 Your values.yaml
   labels:
     {{- include "react-chart.labels" . | nindent 4 }}
 spec:
