@@ -1,5 +1,5 @@
 !/bin/bash
-cd /home/ubuntu/royal-challengers-glory/react-helm/ # change directory to heml 
+cd /home/ubuntu/workdir/royal-challengers-glory/react-helm/ # change directory to heml 
 
 aws s3 cp s3://git-commit-bucket/old_value.txt . # copy files from s3 to working directory
 aws s3 cp s3://git-commit-bucket/new_value.txt .
