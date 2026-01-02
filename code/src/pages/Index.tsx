@@ -8,6 +8,10 @@ const Index = () => {
         <h1 style={{ fontSize: "32px", fontWeight: "bold", margin: 0 }}>
           🏆 This fanpage is hosted on kuberneties cluster fullly automated page helm also configerd  !! 
         </h1>
+
+        <h1 style={{ fontSize: "32px", fontWeight: "bold", margin: 0 }}>
+          🏆 HELM CONFIGURED AND EVERYTHING RUN JENKINS !! 
+        </h1>
       </header>
 
       {/* Hero Section */}
@@ -30,7 +34,7 @@ const Index = () => {
           textAlign: "center",
           marginBottom: "30px"
         }}>
-          <h2 style={{ fontSize: "48px", margin: "0 0 10px 0" }}>🎉 IPL 2025 CHAMPIONS! 🎉</h2>
+          <h2 style={{ fontSize: "48px", margin: "0 0 10px 0" }}>🎉 IPL 2025 CHAMPIONS!  🎉</h2>
           <p style={{ fontSize: "24px", margin: 0 }}>
             Finally! Ee Sala Cup Namde came true!
           </p>
