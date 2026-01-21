@@ -11,7 +11,7 @@ new_value=$(cat new_value.txt)
 #using sed command cahnge the tag with this tag helm upgrate the version
 sudo sed -i "s/${old_value}/${new_value}/g" values.yaml
 
-#cahnges will add to staging area and commit with those laatest values
+#cahnges will add to staging area and commit with those laatest values to cerntral repo
 sudo git add .
 sudo git commit -m "${new_value} is updated"
 sudo git push https://$GIT_TOKEN@github.com/adya1554/royal-challengers-glory.git
